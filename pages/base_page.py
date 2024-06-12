@@ -25,6 +25,23 @@ class BasePage:
         locator = locator.format(num)
         return (method, locator)
 
+    def get_window_tabs(self):
+        window_handles = self.driver.window_handles
+        return window_handles[1]
+
+    def switch_to_window(self, window_handle):
+        self.driver.switch_to.window(window_handle)
+
+    def scroll_to_the_element(self, element):
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    def scroll_to_end(self):
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    def get_current_url(self):
+        return self.driver.current_url
+
+
 
 
 

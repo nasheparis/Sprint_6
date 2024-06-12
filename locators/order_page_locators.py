@@ -20,5 +20,6 @@ class OrderPageLocators:
     YES_BUTTON = By.XPATH, '//button[contains(text(), "Да")]'
     ORDER_PLACED_TEXT = By.XPATH, '//div[contains(text(), "Заказ оформлен")]'
     STATUS_BUTTON = By.XPATH, '//button[contains(text(), "Посмотреть статус")]'
-    CANCEL_ORDER = By.XPATH, '//button[contains(text(), "Отменить заказ")]'
     ORDER_BUTTON_SCROLL = By.XPATH, '//div[contains(@class, "Home_FinishButton")]'
+    COOKIE_BUTTON = By.XPATH, '//button[contains(text(), "все привыкли")]'
+

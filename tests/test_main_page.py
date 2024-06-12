@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from data import AnswerTexts, WEBSITE
@@ -5,7 +6,6 @@ from pages.main_page import MainPage
 
 
 class TestMainPage:
-
     @pytest.mark.parametrize(
         'num, result',
         [
@@ -29,10 +29,12 @@ class TestMainPage:
             'answer 8: location'
         ]
     )
+    @allure.title("Тест проверяет переход к вопросу и получение текста ответа")
     def test_get_faq(self, driver, num, result):
         main_page = MainPage(driver)
         assert main_page.get_answer_text(num) == result
 
+    @allure.title("Тест проверяет переход на главную страницу по тапу на слово 'Самокат' в хедере")
     def test_click_on_logo(self, driver):
         main_page = MainPage(driver)
         expected_url = WEBSITE
