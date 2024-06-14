@@ -26,17 +26,22 @@ class OrderPage(BasePage):
         self.click_to_element(OrderPageLocators.YES_BUTTON)
         text = self.get_text_from_element(OrderPageLocators.ORDER_PLACED_TEXT)
         return text
+
     @allure.step('Создание заказа по кнопке "Заказать" в хедере')
     def make_order(self):
-        self.click_to_element(OrderPageLocators.COOKIE_BUTTON)
         self.click_to_element(OrderPageLocators.ORDER_BUTTON)
         self.fill_in_fields()
 
     @allure.step('Создание заказа по кнопке "Заказать" ниже по скроллу')
     def scroll_make_order(self):
-        self.click_to_element(OrderPageLocators.COOKIE_BUTTON)
         element = self.find_element_with_wait(OrderPageLocators.ORDER_BUTTON_SCROLL)
         self.scroll_to_the_element(element)
         self.click_to_element(OrderPageLocators.ORDER_BUTTON_SCROLL)
         self.fill_in_fields()
 
+    @allure.step('Проверка успешного оформления заказа')
+    def check_order_success_text(self):
+        success_text_element = self.find_element_with_wait(OrderPageLocators.ORDER_PLACED_TEXT)
+        if success_text_element:
+            success_text = success_text_element.text
+            return "Заказ оформлен" in success_text

@@ -1,9 +1,7 @@
 from locators.external_page_locators import ExternalPageLocators
-from locators.order_page_locators import OrderPageLocators
 
 WEBSITE = 'https://qa-scooter.praktikum-services.ru/'
 TEST_COMMENT = 'test'
-ORDER_SUCCESS_TEXT_LOCATOR = OrderPageLocators.ORDER_PLACED_TEXT
 ORDER_SUCCESS_TEXT = 'Заказ оформлен'
 YANDEX_INSTALL_BUTTON = ExternalPageLocators.INSTALL_BUTTON
 YANDEX_INSTALL_BUTTON_TEXT = 'Установить'

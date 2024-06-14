@@ -7,7 +7,7 @@ from pages.base_page import BasePage
 class MainPage(BasePage):
     @allure.step("Получение текста ответа")
     def get_answer_text(self, num):
-        self.click_to_element(MainPageLocators.COOKIE_BUTTON)
+        self.click_on_cookies()
         self.scroll_to_end()
         locator_q_formatted = self.format_locators(MainPageLocators.QUESTION, num)
         locator_a_formatted = self.format_locators(MainPageLocators.ANSWER, num)
@@ -20,5 +20,6 @@ class MainPage(BasePage):
         link = self.get_current_url()
         return link
 
-
-
+    @allure.step("Клик на куки")
+    def click_on_cookies(self):
+        self.click_to_element(MainPageLocators.COOKIE_BUTTON)

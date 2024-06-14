@@ -21,5 +21,4 @@ class OrderPageLocators:
     ORDER_PLACED_TEXT = By.XPATH, '//div[contains(text(), "Заказ оформлен")]'
     STATUS_BUTTON = By.XPATH, '//button[contains(text(), "Посмотреть статус")]'
     ORDER_BUTTON_SCROLL = By.XPATH, '//div[contains(@class, "Home_FinishButton")]'
-    COOKIE_BUTTON = By.XPATH, '//button[contains(text(), "все привыкли")]'
 
